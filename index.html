@@ -3,8 +3,56 @@
 <head>
     <title>V-ZUG Schnupperlehre</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        var iframe = null;
+        function openMap() {
+            if (iframe === null) {
+                iframe = document.createElement('iframe');
+                iframe.setAttribute('src', 'https://embed.waze.com/iframe?zoom=15&lat=47.177194&lon=8.427186&pin=1&ct=livemap');
+                iframe.setAttribute('width', '600');
+                iframe.setAttribute('height', '450');
+                document.querySelector('.map-container').appendChild(iframe);
+            } else {
+                iframe.parentNode.removeChild(iframe);
+                iframe = null;
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1></h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/V-Zug_logo.svg" width="100px"
+     alt="V_ZUG Logo">
+    <h1>Über Mich - Nils</h1>
+    <div class="container">
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>Hobbys</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Wohnort</td>
+                    <td onclick="openMap()"><a href="#">Hünenberg</a></td>
+                </tr>
+                <tr>
+                    <td>Schulklasse</td>
+                    <td>2. Sek</td>
+                </tr>
+                <tr>
+                    <td>Lieblingsseite</td>
+                    <td><a href="https://github.io" target="_blank">GitHub</a></td>
+                </tr>
+            </table>
+            <div class="info-container">
+                <h3>Lieblingsessen</h3>
+                <ul>
+                    <li>Pizza</li>
+                    <li>Lasagne</li>
+                    <li>Spaghetti</li>
+                </ul>
+            </div>
+        </div>
+        <div class="map-container"></div>
+    </div>
 </body>
 </html>
