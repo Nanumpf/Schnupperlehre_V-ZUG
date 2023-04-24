@@ -5,16 +5,21 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         var iframe = null;
+        var button = null;
         function openMap() {
             if (iframe === null) {
                 iframe = document.createElement('iframe');
-                iframe.setAttribute('src', 'https://embed.waze.com/iframe?zoom=15&lat=47.177194&lon=8.427186&pin=1&ct=livemap');
+                iframe.setAttribute('src', 'https://embed.waze.com/de/iframe?zoom=15&lat=47.177194&lon=8.427186&pin=1&ct=livemap');
                 iframe.setAttribute('width', '600');
                 iframe.setAttribute('height', '450');
                 document.querySelector('.map-container').appendChild(iframe);
-            } else {
-                iframe.parentNode.removeChild(iframe);
-                iframe = null;
+                button = document.createElement('button');
+                button.onclick = function () {
+                    iframe.parentNode.removeChild(iframe);
+                    button.parentNode.removeChild(button)
+                    iframe = null    
+                }
+                document.querySelector('.map-container').appendChild(button);
             }
         }
     </script>
@@ -28,7 +33,7 @@
             <table>
                 <tr>
                     <td>Hobbys</td>
-                    <td></td>
+                    <td><a href="hobbys.html#musik">Musik</a>, <a href="hobbys.html#gamen">Gamen</a></td>
                 </tr>
                 <tr>
                     <td>Wohnort</td>

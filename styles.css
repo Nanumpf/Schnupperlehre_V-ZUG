@@ -21,9 +21,26 @@ table, th, td {
   position: absolute;
   left: 300px;
   flex: 1;
+  transition: opacity 1s ease-out;
+}
+
+iframe {
+  border-radius: 15px;
+  border: 2px solid black;
 }
 
 .info-container {
   position: absolute;
   top: 130px;
+}
+
+button {
+  border: 0px;
+  padding: 15px 15px;
+  border-radius: 100px;
+  text-align: center;
+  position: relative;
+  bottom: 453px;
+  right: 19px;
+  background-color: rgb(255, 42, 42);
 }
